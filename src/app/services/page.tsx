@@ -12,7 +12,6 @@ const FX_RATE_EUR_USD = 1.10; // <— поменяйте при необходи
 
 function formatPrice(eur: number) {
     const usd = eur * FX_RATE_EUR_USD;
-    // 15€ / $16.50
     return `${eur.toFixed(0)}€ / $${usd.toFixed(2)}`;
 }
 
@@ -39,9 +38,9 @@ function Table({ title, items, lang }: { title: string; items: Row[]; lang: "de"
 }
 
 export default function Services() {
-    const { t, lang } = useLang() as { t: any; lang: "de" | "ru" | "en" };
+    const { t, lang } = useLang();
 
-    // Женский прайс — из ваших файлов (Preis Frauen) :contentReference[oaicite:0]{index=0}
+    // Женский прайс — из ваших файлов (Preis Frauen)
     const female: Row[] = [
         { nameDe: "Augenbrauen", nameRu: "Брови", nameEn: "Eyebrows", eur: 15 },
         { nameDe: "Oberlippe", nameRu: "Верхняя губа", nameEn: "Upper lip", eur: 10 },
@@ -61,7 +60,7 @@ export default function Services() {
         { nameDe: "Beine (halb) + Bikini + Achseln", nameRu: "Ноги (половина) + Бикини + Подмышки", nameEn: "Half legs + bikini + armpits", eur: 80 },
     ];
 
-    // Мужской прайс — из ваших файлов (Preis Männer 1) :contentReference[oaicite:1]{index=1}
+    // Мужской прайс — из ваших файлов (Preis Männer 1)
     const male: Row[] = [
         { nameDe: "Augenbrauen", nameRu: "Брови", nameEn: "Eyebrows", eur: 15 },
         { nameDe: "Nase (Wachs)", nameRu: "Нос (воск)", nameEn: "Nose (wax)", eur: 10 },
@@ -83,7 +82,6 @@ export default function Services() {
         { nameDe: "Rücken + Schultern + Bauch + Brust + Achseln", nameRu: "Спина + Плечи + Живот + Грудь + Подмышки", nameEn: "Back + Shoulders + Abdomen + Chest + Armpits", eur: 110 },
     ];
 
-    // Заголовки (если в t.services уже есть EN — они подтянутся автоматически)
     const titleFemale = t?.services?.female ?? (lang === "de" ? "Damen" : lang === "ru" ? "Женщины" : "Women");
     const titleMale = t?.services?.male ?? (lang === "de" ? "Herren" : lang === "ru" ? "Мужчины" : "Men");
     const titleFace = t?.services?.face ?? (lang === "de" ? "Süße Gesichtsbehandlung" : lang === "ru" ? "Сладкая уходовая процедура" : "Sweet facial treatment");
