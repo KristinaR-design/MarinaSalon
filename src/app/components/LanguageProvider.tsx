@@ -1,12 +1,14 @@
 "use client";
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { translations, Lang } from "@/app/lib/i18n";
+
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+// ⚠️ Если i18n у вас в src/app/lib/i18n.ts — замените на "@/app/lib/i18n"
+import { translations, type Lang, type Dict } from "@/app/lib/i18n";
 
 type Ctx = {
     lang: Lang;
     setLang: (l: Lang) => void;
     toggle: () => void;
-    t: typeof translations["de"];
+    t: Dict; // ✅ словарь текущего языка (de | ru | en)
 };
 
 const LangContext = createContext<Ctx | null>(null);
@@ -14,21 +16,26 @@ const LangContext = createContext<Ctx | null>(null);
 export function LangProvider({ children }: { children: ReactNode }) {
     const [lang, setLang] = useState<Lang>("de");
 
+    // читаем язык из localStorage только на клиенте
     useEffect(() => {
-        const s = localStorage.getItem("lang") as Lang | null;
-        if (s) setLang(s);
+        const saved = (typeof window !== "undefined"
+            ? (localStorage.getItem("lang") as Lang | null)
+            : null);
+        if (saved) setLang(saved);
     }, []);
 
     const toggle = () => {
-        setLang(prev => {
+        setLang((prev) => {
             const order: Lang[] = ["de", "ru", "en"];
             const next = order[(order.indexOf(prev) + 1) % order.length];
-            localStorage.setItem("lang", next);
+            if (typeof window !== "undefined") {
+                localStorage.setItem("lang", next);
+            }
             return next;
         });
     };
 
-    const t = translations[lang];
+    const t: Dict = translations[lang];
 
     return (
         <LangContext.Provider value={{ lang, setLang, toggle, t }}>

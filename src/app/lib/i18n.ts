@@ -28,4 +28,6 @@ export const translations = {
   }
 } as const;
 
-export type Lang = keyof typeof translations;
+export type Lang = keyof typeof translations;              // "de" | "ru" | "en"
+export type Dict = (typeof translations)[Lang];            // словарь для текущего языка
+
