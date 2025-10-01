@@ -42,6 +42,21 @@ export async function POST(req: Request) {
             cache: "no-store",
         });
 
+        const textResp = await tgResp.text();
+        let jsonResp: { ok?: boolean } = {};
+        try { jsonResp = JSON.parse(textResp); } catch { }
+
+        if (!jsonResp.ok) {
+            return new Response(JSON.stringify({
+                ok: false,
+                source: "telegram",
+                status: tgResp.status,
+                body: textResp
+            }), { status: 502, headers: { "Content-Type": "application/json" } });
+        }
+
+        return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { "Content-Type": "application/json" } });
+
         const data: { ok: boolean;[k: string]: unknown } = await tgResp.json();
         if (!data.ok) {
             return new Response(JSON.stringify({ ok: false, source: "telegram", data }), {
