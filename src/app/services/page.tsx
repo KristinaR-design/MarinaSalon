@@ -1,5 +1,6 @@
 "use client";
 import { useLang } from "@/app/components/LanguageProvider";
+import Reveal from "@/app/components/Reveal";
 
 type Row = {
     nameDe: string;
@@ -8,7 +9,7 @@ type Row = {
     eur: number; // цена в EUR
 };
 
-const FX_RATE_EUR_USD = 1.10; // <— поменяйте при необходимости
+const FX_RATE_EUR_USD = 1.16; // <— поменяйте при необходимости
 
 function formatPrice(eur: number) {
     const usd = eur * FX_RATE_EUR_USD;
@@ -87,38 +88,42 @@ export default function Services() {
     const titleFace = t?.services?.face ?? (lang === "de" ? "Süße Gesichtsbehandlung" : lang === "ru" ? "Сладкая уходовая процедура" : "Sweet facial treatment");
 
     return (
-        <div className="max-w-6xl mx-auto px-5 py-16 space-y-6">
-            <h1 className="text-3xl md:text-4xl font-serif">
-                {t?.services?.title ?? (lang === "de" ? "Leistungen & Preise" : lang === "ru" ? "Услуги и цены" : "Services & Prices")}
-            </h1>
+        <>
+            <Reveal>
+                <div className="max-w-6xl mx-auto px-5 py-16 space-y-6">
+                    <h1 className="text-3xl md:text-4xl font-serif">
+                        {t?.services?.title ?? (lang === "de" ? "Leistungen & Preise" : lang === "ru" ? "Услуги и цены" : "Services & Prices")}
+                    </h1>
 
-            <div className="grid md:grid-cols-2 gap-6">
-                <Table title={titleFemale} items={female} lang={lang} />
-                <Table title={titleMale} items={male} lang={lang} />
-            </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <Table title={titleFemale} items={female} lang={lang} />
+                        <Table title={titleMale} items={male} lang={lang} />
+                    </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-                <Table title={lang === "de" ? "Kombipakete – Damen" : lang === "ru" ? "Комбо — Женщины" : "Combos – Women"} items={femaleCombo} lang={lang} />
-                <Table title={lang === "de" ? "Kombipakete – Herren" : lang === "ru" ? "Комбо — Мужчины" : "Combos – Men"} items={maleCombo} lang={lang} />
-            </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <Table title={lang === "de" ? "Kombipakete – Damen" : lang === "ru" ? "Комбо — Женщины" : "Combos – Women"} items={femaleCombo} lang={lang} />
+                        <Table title={lang === "de" ? "Kombipakete – Herren" : lang === "ru" ? "Комбо — Мужчины" : "Combos – Men"} items={maleCombo} lang={lang} />
+                    </div>
 
-            <div className="card p-6">
-                <h3 className="text-xl font-semibold mb-3">{titleFace} – {formatPrice(60)}</h3>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>{lang === "de" ? "Reinigung & Peeling" : lang === "ru" ? "Очищение и пилинг" : "Cleansing & peeling"}</li>
-                    <li>{lang === "de" ? "Zuckerpaste – Wellenmassage" : lang === "ru" ? "Сахарная паста – волновой массаж" : "Sugar paste – wave massage"}</li>
-                    <li>{lang === "de" ? "Gesichtsmaske" : lang === "ru" ? "Маска для лица" : "Face mask"}</li>
-                    <li>{lang === "de" ? "Jade-Roller-Massage" : lang === "ru" ? "Массаж нефритовым роллером" : "Jade roller massage"}</li>
-                </ul>
-                <p className="mt-3 text-sm text-gray-600">
-                    {lang === "de"
-                        ? "Ein doppelt wirksamer Kollagen-Booster. Natürliche Kräfte von Zucker und ungarischem Wellness vereint."
-                        : lang === "ru"
-                            ? "Двойной коллаген-бустер. Натуральная сила сахара и венгерского wellness объединены."
-                            : "A dual-action collagen booster. The natural power of sugar and Hungarian wellness combined."
-                    }
-                </p>
-            </div>
-        </div>
+                    <div className="card p-6">
+                        <h3 className="text-xl font-semibold mb-3">{titleFace} – {formatPrice(60)}</h3>
+                        <ul className="list-disc pl-6 space-y-1">
+                            <li>{lang === "de" ? "Reinigung & Peeling" : lang === "ru" ? "Очищение и пилинг" : "Cleansing & peeling"}</li>
+                            <li>{lang === "de" ? "Zuckerpaste – Wellenmassage" : lang === "ru" ? "Сахарная паста – волновой массаж" : "Sugar paste – wave massage"}</li>
+                            <li>{lang === "de" ? "Gesichtsmaske" : lang === "ru" ? "Маска для лица" : "Face mask"}</li>
+                            <li>{lang === "de" ? "Jade-Roller-Massage" : lang === "ru" ? "Массаж нефритовым роллером" : "Jade roller massage"}</li>
+                        </ul>
+                        <p className="mt-3 text-sm text-gray-600">
+                            {lang === "de"
+                                ? "Ein doppelt wirksamer Kollagen-Booster. Natürliche Kräfte von Zucker und ungarischem Wellness vereint."
+                                : lang === "ru"
+                                    ? "Двойной коллаген-бустер. Натуральная сила сахара и венгерского wellness объединены."
+                                    : "A dual-action collagen booster. The natural power of sugar and Hungarian wellness combined."
+                            }
+                        </p>
+                    </div>
+                </div>
+            </Reveal>
+        </>
     );
 }

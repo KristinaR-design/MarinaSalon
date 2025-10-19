@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const images = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpeg"]; // кладём в /public
+const images = ["/hero1.jpeg", "/hero2.jpeg", "/hero3.jpeg"]; // кладём в /public
 
 export default function Slider() {
     const [i, setI] = useState(0);
@@ -25,7 +25,8 @@ export default function Slider() {
                     alt={`Salon slide ${idx + 1}`}
                     fill
                     priority={idx === 0}
-                    sizes="100vw"
+                    // sizes="100vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1200px"
                     className={`object-cover transition-opacity duration-1000 ease-in-out ${i === idx ? "opacity-100" : "opacity-0"
                         }`}
                 />
@@ -35,3 +36,5 @@ export default function Slider() {
         </section>
     );
 }
+
+
