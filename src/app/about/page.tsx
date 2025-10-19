@@ -8,10 +8,10 @@ export default function About() {
 
     return (
         <>
-            <div className="max-w-6xl mx-auto px-5 py-10 md:py-16 space-y-8">
+            <div className="max-w-6xl mx-auto px-5 py-3 md:py-10 space-y-4 border-radius-2xl">
                 <Slider />
             </div>
-            <section className="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-2 gap-10 items-start">
+            <section className="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-2 gap-10 items-start">
 
                 <div>
 
