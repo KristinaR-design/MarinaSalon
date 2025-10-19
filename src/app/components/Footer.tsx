@@ -23,7 +23,7 @@ export default function Footer() {
                     className="w-full md:w-auto">
                     <ul
                         className="flex flex-wrap justify-center md:justify-end items-center
-                       gap-3 sm:gap-4 lg:gap-6"
+                       gap-3 sm:gap-4 lg:gap-6 md:8"
                     >
                         <li>
                             <a
