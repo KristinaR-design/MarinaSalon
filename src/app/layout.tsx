@@ -27,6 +27,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+      </head>
       {/* делаем колонку на весь экран */}
       <body className="min-h-screen flex flex-col bg-[#fff8e9] text-gray-800">
         <LangProvider>

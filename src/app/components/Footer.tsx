@@ -1,17 +1,18 @@
 // src/app/components/Footer.tsx
-
 export default function Footer() {
     return (
-        <footer className="mt-16 border-t border-gold/40
-                        bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500
-                        text-gray-100 shadow-lg">
+        <footer
+            className="mt-16 border-t border-gold/40
+                 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500
+                 text-gray-100 shadow-lg"
+        >
             <div
                 className="max-w-6xl mx-auto
-                   px-4 sm:px-6 lg:px-8
-                   py-6 sm:py-8 lg:py-10
-                   flex flex-col gap-5
-                   md:flex-row md:items-center md:justify-between
-                   pb-[env(safe-area-inset-bottom)]"
+             px-4 sm:px-6 lg:px-8
+             py-6 sm:py-8 lg:py-10
+             flex flex-col gap-5
+             md:flex-row md:items-center md:justify-between"
+                style={{ paddingBottom: 'max(28px, env(safe-area-inset-bottom))' }}
             >
                 {/* Левая часть */}
                 <p className="text-xs sm:text-sm md:text-base text-gray-100/90 text-center md:text-left">
@@ -19,11 +20,10 @@ export default function Footer() {
                 </p>
 
                 {/* Правая часть — навигация/контакты */}
-                <nav aria-label="Kontaktlinks"
-                    className="w-full md:w-auto">
+                <nav aria-label="Kontaktlinks" className="w-full md:w-auto">
                     <ul
                         className="flex flex-wrap justify-center md:justify-end items-center
-                       gap-3 sm:gap-4 lg:gap-6 md:9"
+                       gap-3 sm:gap-4 md:gap-6 lg:gap-8"
                     >
                         <li>
                             <a

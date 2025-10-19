@@ -124,7 +124,7 @@ export default function Home() {
           </section>
 
           {/* Блок преимуществ (чуть больше «воздуха» и подзаголовок) */}
-          <section className="hero-bg mt-16 md:mt-20">
+          <section className="hero-bg mt-14 md:mt-8">
             <div className="max-w-6xl mx-auto px-5 py-10 md:py-16 space-y-8 md:space-y-16">
               <h2 className="text-center text-2xl md:text-3xl font-serif text-gray-900 gap-8 md:26" >
                 {lang === "de"
@@ -188,7 +188,7 @@ export default function Home() {
               </div>
 
 
-              <div className="text-lg leading-relaxed text-gray-700 space-y-4 mt-10 flex justify-center">
+              <div className="text-lg leading-relaxed text-gray-700 space-y-4 mt-7 flex justify-center">
                 <a
                   href={`https://wa.me/491629344918?text=${encodeURIComponent(waText)}`}
                   target="_blank"
