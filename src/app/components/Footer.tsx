@@ -69,6 +69,21 @@ export default function Footer() {
                                 marydick918@gmail.com
                             </a>
                         </li>
+
+                        <li>
+                            <a
+
+                                className="inline-flex items-center justify-center
+                           min-h-[40px] px-3 sm:px-4
+                           rounded-full border border-gold/50
+                           text-[13px] sm:text-sm md:text-base
+                           hover:text-gold hover:border-gold
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60
+                           transition-colors break-all"
+                            >
+                                Adresse: Roßfelder Straße 65/5, 74564 Crailsheim
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
