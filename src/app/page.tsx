@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { useLang } from "@/app/components/LanguageProvider";
 import Reveal from "@/app/components/Reveal";
+import Link from "next/link";
+import SeasonalOffer from "@/app/SeasonalOffer";
+
 
 // если хотите вернуть слайдер ниже, просто раскомментируйте следующую строку
 // import Slider from "@/app/components/Slider";
@@ -26,7 +29,7 @@ export default function Home() {
             {/* Текст (первым в разметке для мобильного порядка) */}
             <div className="order-1 md:order-none">
               <h1 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6 text-center md:text-left">
-                {lang === "de" ? "Über mich" : lang === "ru" ? "Обо мне" : "About me"}
+                {lang === "de" ? "Willkommen bei Ihrer Expertin für Sugaring & Nageldesign." : lang === "ru" ? "Добро пожаловать к вашему эксперту по шугарингу и ногтевому сервису." : "Welcome to your expert in sugaring and nail service."}
               </h1>
 
               {/* Важно: контейнер <div>, а внутри — отдельные <p>, чтобы не было p внутри p */}
@@ -34,26 +37,19 @@ export default function Home() {
                 {lang === "de" && (
                   <>
                     <p>
-                      Ich bin zertifizierte Meisterin für Haarentfernung (Sugaring) und
-                      Nageldesign mit mehr als fünf Jahren Berufserfahrung. Mein Beruf ist
-                      für mich nicht nur Arbeit, sondern eine Leidenschaft, die es mir
-                      ermöglicht, die natürliche Schönheit jedes Menschen zu unterstreichen.
+                      Ich bin zertifizierte Meisterin für Sugaring und Nageldesign mit über fünf Jahren Erfahrung – für mich ist es nicht nur ein Beruf, sondern eine Leidenschaft.
+                      Mein Ziel: Ihre natürliche Schönheit zu unterstreichen und Ihnen ein rundum schönes Wohlgefühl zu schenken.
                     </p>
                     <p>
-                      Ich arbeite mit Frauen und Männern und gehe individuell auf jeden ein –
-                      mit viel Einfühlungsvermögen, Präzision und Liebe zum Detail. Hygiene,
-                      Qualität und Wohlbefinden meiner Kunden stehen für mich an erster
-                      Stelle.
+                      Ich betreue sowohl Frauen als auch Männer und lege besonderen Wert auf individuelle Beratung, höchsten Komfort und absolute Sicherheit.
+                      Jede Behandlung wird sorgfältig und nach höchsten Hygienestandards durchgeführt.
                     </p>
                     <p>
-                      Jede Behandlung wird sorgfältig geplant und auf Hauttyp, Wünsche und
-                      Wohlgefühl des Kunden abgestimmt. Ich bilde mich regelmäßig weiter, um
-                      neue Techniken und Trends in mein Angebot aufzunehmen.
+                      Vor jeder Behandlung erkläre ich den Ablauf genau, wähle die passenden Materialien für Ihren Hauttyp aus und gebe wertvolle Tipps für die Pflege danach.
+                      Durch regelmäßige Weiterbildungen kann ich Ihnen stets moderne und besonders effektive Methoden anbieten.
                     </p>
                     <p>
-                      Mein Ziel ist es, dass sich jeder Kunde nach der Behandlung gepflegt,
-                      entspannt und selbstbewusst fühlt. Denn wahre Schönheit beginnt mit
-                      dem Gefühl, sich in der eigenen Haut wohlzufühlen.
+                      Nach einem Besuch bei mir verlassen Sie mein Studio mit Leichtigkeit, Selbstbewusstsein und dem Gefühl innerer Harmonie.
                     </p>
                   </>
                 )}
@@ -143,12 +139,17 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { img: "/feature1.jpeg", text: t.features.one },
-                  { img: "/feature2.png", text: t.features.two },
-                  { img: "/feature3.jpg", text: t.features.three },
+                  { img: "/nails.jpg", text: t.features.one, slug: "manicure" },
+                  { img: "/feature2.png", text: t.features.two, href: "shugaring" },
+                  { img: "/feature3.jpg", text: t.features.three, slug: "wellness" },
+                  { img: "/Parafin.jpg", text: t.features.four, slug: "paraffin" },
+                  {
+                    img: "/season.jpg", text: t.features.five, slug: "seasonal"
+                  },
                 ].map((item, i) => (
-                  <div
+                  <Link
                     key={i}
+                    href={`/procedures/${item.href ? item.href : item.slug}`}
                     className="relative rounded-2xl overflow-hidden bg-white/90 backdrop-blur-sm shadow-md hover:shadow-gold/40 transition-all duration-700 group"
                   >
                     {/* Фото */}
@@ -170,7 +171,7 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-transparent blur-xl" />
                     </div>
 
-                  </div>
+                  </Link>
                 ))}
 
 

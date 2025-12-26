@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useLang } from "./LanguageProvider";
+import { Manrope, Playfair_Display } from "next/font/google";
 ;
 
 export default function Header() {
@@ -11,6 +12,7 @@ export default function Header() {
 
     return (
         <header className="w-full border-b border-gold/40 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 text-white sticky top-0 z-40 shadow-lg">
+            
             <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
                 {/* Brand */}
                 <Link href="/" className="flex items-center gap-3">

@@ -12,9 +12,9 @@ type Row = {
 const FX_RATE_EUR_USD = 1.16; // <— поменяйте при необходимости
 
 function formatPrice(eur: number) {
-    const usd = eur * FX_RATE_EUR_USD;
-    return `${eur.toFixed(0)}€ / $${usd.toFixed(2)}`;
+    return `${eur.toFixed(0)}€`;
 }
+
 
 function localName(row: Row, lang: "de" | "ru" | "en") {
     if (lang === "de") return row.nameDe;
@@ -83,9 +83,38 @@ export default function Services() {
         { nameDe: "Rücken + Schultern + Bauch + Brust + Achseln", nameRu: "Спина + Плечи + Живот + Грудь + Подмышки", nameEn: "Back + Shoulders + Abdomen + Chest + Armpits", eur: 110 },
     ];
 
+    const nails: Row[] = [
+        {
+            nameDe: "Gel Nägel",
+            nameRu: "Гелевые ногти",
+            nameEn: "Gel nails",
+            eur: 50,
+        },
+        {
+            nameDe: "Shellac Nägel",
+            nameRu: "Ногти Shellac",
+            nameEn: "Shellac nails",
+            eur: 35,
+        },
+        {
+            nameDe: "Klassische Maniküre",
+            nameRu: "Классический маникюр",
+            nameEn: "Classic manicure",
+            eur: 20,
+        },
+        {
+            nameDe: "Paraffinbad + Peeling",
+            nameRu: "Парафиновая ванна + пилинг",
+            nameEn: "Paraffin bath + peeling",
+            eur: 30,
+        },
+    ];
+
+
     const titleFemale = t?.services?.female ?? (lang === "de" ? "Damen" : lang === "ru" ? "Женщины" : "Women");
     const titleMale = t?.services?.male ?? (lang === "de" ? "Herren" : lang === "ru" ? "Мужчины" : "Men");
     const titleFace = t?.services?.face ?? (lang === "de" ? "Süße Gesichtsbehandlung" : lang === "ru" ? "Сладкая уходовая процедура" : "Sweet facial treatment");
+    const titleNails = t?.services?.nails ?? (lang === "de" ? "Nägel" : lang === "ru" ? "Ногти" : "Nails");
 
     return (
         <>
@@ -122,6 +151,7 @@ export default function Services() {
                             }
                         </p>
                     </div>
+                    <Table title={titleNails} items={nails} lang={lang} />
                 </div>
             </Reveal>
         </>
