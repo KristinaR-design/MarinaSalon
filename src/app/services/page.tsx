@@ -9,6 +9,7 @@ type Row = {
     eur: number; // цена в EUR
 };
 
+
 const FX_RATE_EUR_USD = 1.16; // <— поменяйте при необходимости
 
 function formatPrice(eur: number) {
@@ -40,6 +41,7 @@ function Table({ title, items, lang }: { title: string; items: Row[]; lang: "de"
 
 export default function Services() {
     const { t, lang } = useLang();
+
 
     // Женский прайс — из ваших файлов (Preis Frauen)
     const female: Row[] = [
