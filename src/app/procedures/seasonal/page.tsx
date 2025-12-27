@@ -6,16 +6,16 @@ import { useLang } from "@/app/components/LanguageProvider";
 
 const content = {
     ru: {
-        waText: ["Марина здравствуйте, хочу записаться на процедуру."],
-        book: ["Записаться в WhatsApp"],
+        waText: "Марина здравствуйте, хочу записаться на процедуру.",
+        book: "Записаться в WhatsApp",
     },
     en: {
-        waText: ["Hello Marina, I'd like to book an appointment."],
-        book: ["Book Now in WhatsApp"],
+        waText: "Hello Marina, I'd like to book an appointment.",
+        book: "Book Now in WhatsApp",
     },
     de: {
-        waText: ["Hallo Marina, ich möchte einen Termin vereinbaren."],
-        book: ["Termin per WhatsApp"],
+        waText: "Hallo Marina, ich möchte einen Termin vereinbaren.",
+        book: "Termin per WhatsApp",
     },
 };
 

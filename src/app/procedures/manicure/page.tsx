@@ -23,8 +23,8 @@ const content = {
             "Регулярно наносить масло для кутикулы для поддержания здоровья ногтей",
             "Не снимать гель самостоятельно — только у мастера",
         ],
-        waText: ["Марина здравствуйте, хочу записаться на процедуру."],
-        book: ["Записаться в WhatsApp"],
+        waText: "Марина здравствуйте, хочу записаться на процедуру.",
+        book: "Записаться в WhatsApp",
     },
     en: {
         title: "Gel Nail Coating",
@@ -44,8 +44,8 @@ const content = {
             "Regularly apply cuticle oil to maintain nail health",
             "Do not remove gel yourself — only by a professional",
         ],
-        waText: ["Hello Marina, I'd like to book an appointment."],
-        book: ["Book Now in WhatsApp"],
+        waText: "Hello Marina, I'd like to book an appointment.",
+        book: "Book Now in WhatsApp",
     },
     de: {
         title: "Gel-Nagelbeschichtung",
@@ -65,8 +65,8 @@ const content = {
             "Regelmäßig Nagelhautöl auftragen, um die Nagelgesundheit zu erhalten",
             "Gel nicht selbst entfernen — nur beim Profi",
         ],
-        waText: ["Hallo Marina, ich möchte einen Termin vereinbaren."],
-        book: ["Termin per WhatsApp"],
+        waText: "Hallo Marina, ich möchte einen Termin vereinbaren.",
+        book: "Termin per WhatsApp",
     },
 };
 

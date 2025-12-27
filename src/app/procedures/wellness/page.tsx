@@ -19,8 +19,8 @@ const content = {
             "Пейте достаточно воды для вывода токсинов",
             "Продолжайте расслабляющие практики дома для закрепления эффекта",
         ],
-        waText: ["Марина здравствуйте, хочу записаться на процедуру."],
-        book: ["Записаться в WhatsApp"],
+        waText: "Марина здравствуйте, хочу записаться на процедуру.",
+        book: "Записаться в WhatsApp",
     },
     en: {
         title: "Wellness Treatments",
@@ -38,8 +38,8 @@ const content = {
             "Drink enough water to flush out toxins",
             "Continue relaxing practices at home to maintain the effect",
         ],
-        waText: ["Hello Marina, I'd like to book an appointment."],
-        book: ["Book Now in WhatsApp"],
+        waText: "Hello Marina, I'd like to book an appointment.",
+        book: "Book Now in WhatsApp",
     },
     de: {
         title: "Wellness-Behandlungen",
@@ -57,8 +57,8 @@ const content = {
             "Genügend Wasser trinken, um Giftstoffe auszuleiten",
             "Entspannende Praktiken zu Hause fortsetzen, um den Effekt zu erhalten",
         ],
-        waText: ["Hallo Marina, ich möchte einen Termin vereinbaren."],
-        book: ["Termin per WhatsApp"],
+        waText: "Hallo Marina, ich möchte einen Termin vereinbaren.",
+        book: "Termin per WhatsApp",
     },
 };
 
