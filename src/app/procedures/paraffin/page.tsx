@@ -19,6 +19,8 @@ const content = {
             "Не наносить жирные кремы и масла сразу после процедуры",
             "Регулярно увлажнять кожу после парафина для сохранения эффекта",
         ],
+        waText: ["Марина здравствуйте, хочу записаться на процедуру."],
+        book: ["Записаться в WhatsApp"],
     },
     en: {
         title: "Paraffin Hand Baths",
@@ -36,6 +38,8 @@ const content = {
             "Do not apply heavy creams or oils immediately after the procedure",
             "Moisturize skin regularly after paraffin to maintain effect",
         ],
+        waText: ["Hello Marina, I'd like to book an appointment."],
+        book: ["Book Now in WhatsApp"],
     },
     de: {
         title: "Paraffinbäder für die Hände",
@@ -53,6 +57,8 @@ const content = {
             "Keine fettigen Cremes oder Öle direkt nach der Behandlung auftragen",
             "Haut regelmäßig nach dem Paraffin pflegen, um den Effekt zu erhalten",
         ],
+        waText: ["Hallo Marina, ich möchte einen Termin vereinbaren."],
+        book: ["Termin per WhatsApp"],
     },
 };
 
@@ -109,6 +115,17 @@ export default function ParaffinPage() {
                         <li key={i}>{item}</li>
                     ))}
                 </ul>
+            </div>
+
+            <div className="flex justify-center mt-10">
+                <a
+                    href={`https://wa.me/491629344918?text=${encodeURIComponent(t.waText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                >
+                    {t.book}
+                </a>
             </div>
         </section>
     );

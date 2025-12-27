@@ -26,6 +26,8 @@ const content = {
         effectTitle: "Как долго длится эффект?",
         effectText:
             "Эффект сохраняется от 3 до 5 недель в зависимости от типа волос. При шугаринге травмируется волосяной фолликул, что замедляет рост волос и со временем делает их тоньше.",
+        waText: ["Марина здравствуйте, хочу записаться на процедуру."],
+        book: ["Записаться в WhatsApp"],
     },
 
     de: {
@@ -51,6 +53,8 @@ const content = {
         effectTitle: "Wie lange hält das Ergebnis an?",
         effectText:
             "Das Ergebnis hält in der Regel 3 bis 5 Wochen – abhängig vom Haartyp. Beim Sugaring wird der Haarfollikel leicht verletzt, wodurch das Haarwachstum verlangsamt und die Haare mit der Zeit feiner werden.",
+        waText: ["Hallo Marina, ich möchte einen Termin vereinbaren."],
+        book: ["Termin per WhatsApp"],
     },
 
     en: {
@@ -76,6 +80,8 @@ const content = {
         effectTitle: "How long does the effect last?",
         effectText:
             "The result usually lasts from 3 to 5 weeks depending on hair type. Sugaring slightly damages the hair follicle, which slows down hair growth and makes the hair finer over time.",
+        waText: ["Hello Marina, I'd like to book an appointment."],
+        book: ["Book Now in WhatsApp"],
     },
 };
 
@@ -127,6 +133,16 @@ export default function SugaringPage() {
                     <h2 className="text-2xl font-semibold mb-3">{t.effectTitle}</h2>
                     <p className="text-lg leading-relaxed">{t.effectText}</p>
                 </div>
+            </div>
+            <div className="flex justify-center mt-10">
+                <a
+                    href={`https://wa.me/491629344918?text=${encodeURIComponent(t.waText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                >
+                    {t.book}
+                </a>
             </div>
         </section>
     );
